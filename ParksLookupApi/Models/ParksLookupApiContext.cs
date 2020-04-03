@@ -22,12 +22,6 @@ namespace ParksLookupApi.Models
           new Park { ParkId = 4, ParkName = "Glen Canyon", Desination = "National Recreation Area", StatesCode = "AZ, UT", Address = "691 Scenic View Rd., Page, AZ 86040", Description = "Encompassing over 1.25 million acres, Glen Canyon National Recreation Area offers unparalleled opportunities for water-based & backcountry recreation. The recreation area stretches for hundreds of miles from Lees Ferry in Arizona to the Orange Cliffs of southern Utah, encompassing scenic vistas, geologic wonders, and a vast panorama of human history.", Weather = "", WebsiteUrl = "https://www.nps.gov/glca/index.htm" },
           new Park { ParkId = 5, ParkName = "Yellowstone", Desination = "National Park", StatesCode = "ID, MT, WY", Address = "Yellowstone National Park, WY 82190", Description = "On March 1, 1872, Yellowstone became the first national park for all to enjoy the unique hydrothermal and geologic wonders. During the month of March, the park is commemorating 25 years since the reintroduction of the wolf to the ecosystem.", Weather = "Yellowstone's weather can vary quite a bit, even in a single day. In the summer, daytime highs can exceed 70°F (25°C), only to drop 20 or more degrees when a thunderstorm rolls through. It can snow during any month of the year, and winter lows frequently drop below 0°F (-18°C), especially at night. Bring a range of clothing options, including a warm jacket and rain gear, even in the summer.", WebsiteUrl = "https://www.nps.gov/yell/index.htm" }
         );
-
-        builder.Entity<User>()
-        .HasData(
-          new User { Id = 1, FirstName = "Admin", LastName = "User", Username = "admin", Password = "admin", Role = Role.Admin },
-          new User { Id = 2, FirstName = "Normal", LastName = "User", Username = "user", Password = "user", Role = Role.User } 
-        );  
     }      
   }
 }
