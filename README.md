@@ -26,8 +26,9 @@ You can test the API directly using an applicaion such as `Postman`. All endpoin
 #### USERS : Token-Basked Authentication and Authorization (JWT)
 || Spec  | API Endpoint  |
 |-| :---------------- | :----- | 
-|1| Public route that accepts HTTP POST requests containing the username and password in the body. If the username and password are correct then a JWT authentication token and the user detials are returned | `POST` /api/users/authenticate |
-|2| Secure route that accepts HTTP GET requests and returns a list of all the users in the application if the HTTP Authorization header contains a valid JWT token. If there is no auth token or the token is invalid then a 401 Unauthorized response is returned | `GET`/ api/users |
+|1| Public route that accepts HTTP POST requests containing the username and password in the body. If the username and password are correct then a JWT authentication token and the user detials are returned. | `POST` /api/users/authenticate <hr>In the body, raw: JSON format <br>{ <br>"username": "admin",<br>"password": "admin"<br>}|
+|2| Secure route that accepts HTTP GET requests and returns a list of all the users in the application if the HTTP Authorization header contains a valid JWT token. If there is no auth token or the token is invalid then a 401 Unauthorized response is returned. | `GET`/ api/users <hr> Add "token" in Auth : Bearer Token type |
+|3| Secure route restricted to authenticated users in any role, it accepts HTTP GET requests and returns the user record for the specified "id" parameter if authorization is successful. <br> "Admin" users can access all user records, while other roles(e.g."User") can only access their own user record. | `GET` /api/users/{id} <hr> Add "token" in Auth : Bearer Token type|
 ---
 
 ## Setup/Installation 

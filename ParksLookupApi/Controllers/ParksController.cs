@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 using ParksLookupApi.Models;
 
 namespace ParksLookupApi.Controllers
@@ -45,6 +46,7 @@ namespace ParksLookupApi.Controllers
     }
 
     // POST api/parks
+    [Authorize]
     [HttpPost]
     public void Post([FromBody] Park park)
     {
@@ -53,6 +55,7 @@ namespace ParksLookupApi.Controllers
     }
 
     // PUT api/parks/3
+    [Authorize]
     [HttpPut("{id}")]
     public void Put(int id, [FromBody] Park park)
     {
@@ -62,6 +65,7 @@ namespace ParksLookupApi.Controllers
     }
 
     // DELETE api/parks/3
+    [Authorize]
     [HttpDelete("{id}")]
     public void Delete(int id)
     {

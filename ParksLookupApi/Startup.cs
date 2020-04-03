@@ -7,6 +7,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using ParksLookupApi.Models;
+using ParksLookupApi.Helpers;
+using ParksLookupApi.Services;
 using System.Text;
 
 
@@ -26,7 +28,9 @@ namespace ParksLookupApi
     {
       services.AddDbContext<ParksLookupApiContext>(opt =>
                 opt.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
+
       services.AddCors();
+      
       services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
       // configure strongly typed settings objects

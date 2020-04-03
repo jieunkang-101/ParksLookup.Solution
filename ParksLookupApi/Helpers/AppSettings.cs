@@ -1,4 +1,4 @@
-namespace ParksLookupApi.Models
+namespace ParksLookupApi.Helpers
 {
   public class AppSettings
   {

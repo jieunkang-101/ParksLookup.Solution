@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using ParksLookupApi.Models;
+using ParksLookupApi.Services;
 
 namespace ParksLookupApi.Controllers
 {

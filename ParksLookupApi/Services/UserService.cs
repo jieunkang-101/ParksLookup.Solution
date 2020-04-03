@@ -7,8 +7,9 @@ using System.Text;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using ParksLookupApi.Models;
+using ParksLookupApi.Helpers;
 
-namespace ParksLookupApi.Models
+namespace ParksLookupApi.Services
 {
   public interface IUserService
   {
