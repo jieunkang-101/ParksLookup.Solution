@@ -10,22 +10,24 @@ An API that allows users to GET, POST, PUT and DELETE for state and national par
 
 ---
 
-## Specifications : user sotries
+## Specifications : 
 You can test the API directly using an applicaion such as `Postman`
+### PARKS
 || Spec  | API Endpoint  |
 |-| :---------------- | :----- | 
 |1| User can READ all parks api call | `GET` /api/parks |
 |2| User can READ a certain park | `GET` /api/parks/{id} |
 |2| User can SEARCH parks by park name and/or state codes | `GET` /api/parks?parkname=yellowstone |
-|3| User can CREATE new park | `POST` /api/parks |
-|4| User can UPDATE exist park api info | `PUT` /api/parks/{id} |
+|3| User can CREATE a new park | `POST` /api/parks |
+|4| User can UPDATE a existing park information | `PUT` /api/parks/{id} |
 |5| User can DELETE a certain park | `DELETE` /api/parks/{id} |
 |6| User can READ a random park | `GET` /api/parks/random |
 
-* Further Exploration 
-  * Token-Basked Authentication and Authorization (JWT)
-  * API Versioning
-  * Using Swagger for Documentaion
+### USERS : Token-Basked Authentication and Authorization (JWT)
+|| Spec  | API Endpoint  |
+|-| :---------------- | :----- | 
+|1| Public route that accepts HTTP POST requests containing the username and password in the body. If the username and password are correct then a JWT authentication token and the user detials are returned | `POST` /api/users/authenticate |
+|2| Secure route that accepts HTTP GET requests and returns a list of all the users in the application if the HTTP Authorization header contains a valid JWT token. If there is no auth token or the token is invalid then a 401 Unauthorized response is returned | `GET`/ api/users |
 ---
 
 ## Setup/Installation 
@@ -56,11 +58,8 @@ You can test the API directly using an applicaion such as `Postman`
 * [.NET](https://dotnet.microsoft.com/)
 * [ASP.NET Core MVC 2.2](https://docs.microsoft.com/en-us/aspnet/core/mvc/overview?view=aspnetcore-2.2)
 * [Entity Framework Core](https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/intro?view=aspnetcore-2.2)
-* [Identity](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/identity?view=aspnetcore-2.2&tabs=visual-studio)
-* [RestSharp API](http://restsharp.org/)
-* [Newtonsoft.Json](https://www.newtonsoft.com/json)
 * [Swagger](https://swagger.io/)
-* [Bootstrap v4.4](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
+
 ---
 
 ### License
