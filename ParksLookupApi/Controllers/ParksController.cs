@@ -19,9 +19,21 @@ namespace ParksLookupApi.Controllers
 
     // GET api/parks
     [HttpGet]
-    public ActionResult<IEnumerable<Park>> Get()
+    public ActionResult<IEnumerable<Park>> Get(string parkName, string statesCode)
     {
-      return _db.Parks.ToList();
+      var query = _db.Parks.AsQueryable();
+
+      if (parkName != null)
+      {
+        query = query.Where(entry => entry.ParkName == parkName);
+      }
+
+      if (statesCode != null)
+      {
+        query = query.Where(entry => entry.StatesCode == statesCode);
+      }
+
+      return query.ToList();
     }
 
     // GET api/parks/5
