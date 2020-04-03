@@ -8,7 +8,7 @@ using ParksLookupApi.Models;
 namespace ParksLookupApi.Migrations
 {
     [DbContext(typeof(ParksLookupApiContext))]
-    [Migration("20200403163523_Initial")]
+    [Migration("20200403163826_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
