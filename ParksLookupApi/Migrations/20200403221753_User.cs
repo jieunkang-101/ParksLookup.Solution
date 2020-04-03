@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ParksLookupApi.Migrations
 {
-    public partial class UserAuthentication : Migration
+    public partial class User : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -17,8 +17,8 @@ namespace ParksLookupApi.Migrations
                     LastName = table.Column<string>(nullable: true),
                     Username = table.Column<string>(nullable: true),
                     Password = table.Column<string>(nullable: true),
-                    Token = table.Column<string>(nullable: true),
-                    Role = table.Column<string>(nullable: true)
+                    Role = table.Column<string>(nullable: true),
+                    Token = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

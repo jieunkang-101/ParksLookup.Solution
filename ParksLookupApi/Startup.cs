@@ -33,7 +33,7 @@ namespace ParksLookupApi
       var appSettingsSection = Configuration.GetSection("AppSettings");
       services.Configure<AppSettings>(appSettingsSection);
 
-      // configure jwt authentication
+      // configure JWT authentication
       var appSettings = appSettingsSection.Get<AppSettings>();
       var key = Encoding.ASCII.GetBytes(appSettings.Secret);
       services.AddAuthentication(x =>
@@ -70,6 +70,14 @@ namespace ParksLookupApi
         // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
         app.UseHsts();
       }
+
+      // global cors policy
+      app.UseCors(x => x
+          .AllowAnyOrigin()
+          .AllowAnyMethod()
+          .AllowAnyHeader());
+
+      app.UseAuthentication();
 
       //app.UseHttpsRedirection();
       app.UseMvc();

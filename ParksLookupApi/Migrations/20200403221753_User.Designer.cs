@@ -8,8 +8,8 @@ using ParksLookupApi.Models;
 namespace ParksLookupApi.Migrations
 {
     [DbContext(typeof(ParksLookupApiContext))]
-    [Migration("20200403210139_UserAuthentication")]
-    partial class UserAuthentication
+    [Migration("20200403221753_User")]
+    partial class User
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
