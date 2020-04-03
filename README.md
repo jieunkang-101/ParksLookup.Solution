@@ -22,7 +22,7 @@ You can test the API directly using an applicaion such as `Postman`. All endpoin
 |4| User can UPDATE a existing park information | `PUT` /api/parks/{id} |
 |5| User can DELETE a certain park | `DELETE` /api/parks/{id} |
 |6| User can READ a random park | `GET` /api/parks/random |
-|7| User need Token to send HTTP POST, PUT and DELETE request | Add Token |
+|7| User need Token to send HTTP POST, PUT and DELETE request | 
 
 #### USERS : Token-Basked Authentication and Authorization (JWT)
 || Spec  | API Endpoint  |
@@ -71,16 +71,16 @@ Follow the installation instructions below to installing **MySQL Community Serve
 5. Start the API   
     * `$ dotnet build` 
     * `$ dotnet run` 
-6. To Test API in postman
+6. To Test API with JWT authentication and authorization in `Postman`
     * Send a POST request to http://localhost:5000/api/users/authenticate. <br> In the request `Body`, select `row : JSON `<br> Enter following JSON format object
     ```
     {
         "username": "admin",
-        "username": "admin"
+        "password": "admin"
     }  
     ```
     * Copy token key
-    * Send a GET request to http://localhost:5000/api/users with Token <br>In the request `Auth`, selet Type `Bearer Token` <br> Paste token key 
+    * Send a GET request to http://localhost:5000/api/users with Token <br>In the request `Auth`, selet Type `Bearer Token` and paste token value
 ---
 
 ## Technologies Used
