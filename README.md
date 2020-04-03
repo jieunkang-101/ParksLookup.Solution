@@ -22,13 +22,14 @@ You can test the API directly using an applicaion such as `Postman`. All endpoin
 |4| User can UPDATE a existing park information | `PUT` /api/parks/{id} |
 |5| User can DELETE a certain park | `DELETE` /api/parks/{id} |
 |6| User can READ a random park | `GET` /api/parks/random |
+|7| User need Token to send HTTP POST, PUT and DELETE request | Add Token |
 
 #### USERS : Token-Basked Authentication and Authorization (JWT)
 || Spec  | API Endpoint  |
 |-| :---------------- | :----- | 
-|1| Public route that accepts HTTP POST requests containing the username and password in the body. If the username and password are correct then a JWT authentication token and the user detials are returned. | `POST` /api/users/authenticate <hr>In the body, raw: JSON format <br>{ <br>"username": "admin",<br>"password": "admin"<br>}|
-|2| Secure route that accepts HTTP GET requests and returns a list of all the users in the application if the HTTP Authorization header contains a valid JWT token. If there is no auth token or the token is invalid then a 401 Unauthorized response is returned. | `GET`/ api/users <hr> Add "token" in Auth : Bearer Token type |
-|3| Secure route restricted to authenticated users in any role, it accepts HTTP GET requests and returns the user record for the specified "id" parameter if authorization is successful. <br> "Admin" users can access all user records, while other roles(e.g."User") can only access their own user record. | `GET` /api/users/{id} <hr> Add "token" in Auth : Bearer Token type|
+|1| Public route that accepts HTTP POST requests containing the username and password in the body. If the username and password are correct then a JWT authentication token and the user detials are returned. | `POST` /api/users/authenticate |
+|2| Secure route that accepts HTTP GET requests and returns a list of all the users in the application if the HTTP Authorization header contains a valid JWT token. If there is no auth token or the token is invalid then a 401 Unauthorized response is returned. | `GET`/ api/users |
+|3| Secure route restricted to authenticated users in any role, it accepts HTTP GET requests and returns the user record for the specified "id" parameter if authorization is successful. <br> "Admin" users can access all user records, while other roles(e.g."User") can only access their own user record. | `GET` /api/users/{id} |
 ---
 
 ## Setup/Installation 
@@ -70,6 +71,16 @@ Follow the installation instructions below to installing **MySQL Community Serve
 5. Start the API   
     * `$ dotnet build` 
     * `$ dotnet run` 
+6. To Test API in postman
+    * Send a POST request to http://localhost:5000/api/users/authenticate. <br> In the request `Body`, select `row : JSON `<br> Enter following JSON format object
+    ```
+    {
+        "username": "admin",
+        "username": "admin"
+    }  
+    ```
+    * Copy token key
+    * Send a GET request to http://localhost:5000/api/users with Token <br>In the request `Auth`, selet Type `Bearer Token` <br> Paste token key 
 ---
 
 ## Technologies Used
