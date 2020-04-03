@@ -37,7 +37,7 @@ namespace ParksLookupApi.Controllers
       return query.ToList();
     }
 
-    // GET api/parks/5
+    // GET api/parks/3
     [HttpGet("{id}")]
     public ActionResult<Park> Get(int id)
     {
