@@ -1,4 +1,4 @@
-# Parks Lookup
+# :deciduous_tree: Parks Lookup
 
 #### C# Building an API Independent Project, 3 April 2020
  
@@ -11,8 +11,8 @@ An API that allows users to GET, POST, PUT and DELETE for state and national par
 ---
 
 ## Specifications : 
-You can test the API directly using an applicaion such as `Postman`
-### PARKS
+You can test the API directly using an applicaion such as `Postman`. All endpoints use host `localhost:5000`
+#### PARKS
 || Spec  | API Endpoint  |
 |-| :---------------- | :----- | 
 |1| User can READ all parks api call | `GET` /api/parks |
@@ -23,7 +23,7 @@ You can test the API directly using an applicaion such as `Postman`
 |5| User can DELETE a certain park | `DELETE` /api/parks/{id} |
 |6| User can READ a random park | `GET` /api/parks/random |
 
-### USERS : Token-Basked Authentication and Authorization (JWT)
+#### USERS : Token-Basked Authentication and Authorization (JWT)
 || Spec  | API Endpoint  |
 |-| :---------------- | :----- | 
 |1| Public route that accepts HTTP POST requests containing the username and password in the body. If the username and password are correct then a JWT authentication token and the user detials are returned | `POST` /api/users/authenticate |
@@ -35,6 +35,25 @@ You can test the API directly using an applicaion such as `Postman`
 
 * _Download on Mac [.NET Core SDK (Software Development Kit)](https://dotnet.microsoft.com/download/dotnet-core/thank-you/sdk-2.2.106-macos-x64-installer)_
 * _Download on Windows [64-bit .NET Core SDK (Software Development Kit)](https://dotnet.microsoft.com/download/dotnet-core/thank-you/sdk-2.2.203-windows-x64-installer)_
+
+### :small_orange_diamond: Installing and Configuring MySQL
+Follow the installation instructions below to installing **MySQL Community Server** and **MySQL Workbench**
+#### MacOS  
+
+1. _Download from the [MySQL Community Server Page](https://dev.mysql.com/downloads/file/?id=484914)_ (Use the No thanks, just start my download link.)
+2. _Download from the [MySQL Workbench Page](https://dev.mysql.com/downloads/file/?id=484391)_ (Use the No thanks, just start my download link.)
+3. Configure ternminal by opening terminal and entering the command: <br>`echo 'export PATH="/usr/local/mysql/bin:$PATH"' >> ~/.bash_profile`<br>`source ~/.bash_profile` 
+4. Verity MySQL installation <br>`$ mysql -uroot -pYOURPASSWORD`
+
+#### Windows 10
+
+1. _Download the [MySQL Web Installer](https://dev.mysql.com/downloads/file/?id=484919)_ (Use the No thanks, just start my download link.)
+2. Add the MySQL environment variable to the System PATH.
+    * Open the Control Panel and visit System > Advanced System Settings > Environment Variables...
+    * Then select PATH..., click Edit..., then Add.
+    * Add the exact location of your MySQL installation, and click OK.
+3. Add the exact location of your MySQL installation, and click OK.
+4. Verity MySQL installation by opening terminal and entering the command: <br>`$ mysql -uroot -pYOURPASSWORD`
 
 ### :small_orange_diamond: Run this project
 
@@ -57,9 +76,8 @@ You can test the API directly using an applicaion such as `Postman`
 * [C#](https://docs.microsoft.com/en-us/dotnet/csharp/)
 * [.NET](https://dotnet.microsoft.com/)
 * [ASP.NET Core MVC 2.2](https://docs.microsoft.com/en-us/aspnet/core/mvc/overview?view=aspnetcore-2.2)
+* [MySQL](https://www.mysql.com/)
 * [Entity Framework Core](https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/intro?view=aspnetcore-2.2)
-* [Swagger](https://swagger.io/)
-
 ---
 
 ### License
