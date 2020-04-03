@@ -1,4 +1,4 @@
-namespace ParksLookupApi.Entities
+namespace ParksLookupApi.Models
 {
   public class User
   {
