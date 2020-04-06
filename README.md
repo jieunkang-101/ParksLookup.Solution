@@ -30,6 +30,9 @@ You can test the API directly using an applicaion such as `Postman`. All endpoin
 |1| Public route that accepts HTTP POST requests containing the username and password in the body. If the username and password are correct then a JWT authentication token and the user detials are returned. | `POST` /api/users/authenticate |
 |2| Secure route that accepts HTTP GET requests and returns a list of all the users in the application if the HTTP Authorization header contains a valid JWT token. If there is no auth token or the token is invalid then a 401 Unauthorized response is returned. | `GET`/ api/users |
 |3| Secure route restricted to authenticated users in any role, it accepts HTTP GET requests and returns the user record for the specified "id" parameter if authorization is successful. <br> "Admin" users can access all user records, while other roles(e.g."User") can only access their own user record. | `GET` /api/users/{id} |
+|4| Public route that accepts HTTP POST requests to create user account | `POST` /api/users/register |
+|5| Secure route that accepts HTTP PUT requests to update user information. "Admin" users can access all users records, while other roles(e.g."User") can only access their own user record. | `PUT` /api/users/{id} |
+|6| Secure route that accepts HTTP DELETE requests to delete user account. "Admin" users can access all users records, while other roles(e.g."User") can only access their own user record. | `DELETE` /api/users/{id} |
 ---
 
 ## Setup/Installation 
