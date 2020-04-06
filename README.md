@@ -79,7 +79,7 @@ Follow the installation instructions below to installing **MySQL Community Serve
         "password": "admin"
     }  
     ```
-    * Copy token key
+    * Copy token value
     * Send a GET request to http://localhost:5000/api/users with Token <br>In the request `Auth`, selet Type `Bearer Token` and paste token value
 ---
 
